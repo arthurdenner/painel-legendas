@@ -51,8 +51,8 @@
 					<h4 class="modal-title">Criar conta</h4>
 				</div>
 				<div class="modal-body">
-					<form>
-						<p><input type="text" required class="myInput" placeholder="Nome de usuário"></p>
+					<form method="POST" action="register">
+						<p><input type="text" name="nick" required class="myInput" placeholder="Nome de usuário"></p>
 						<p><input type="email" required class="myInput" placeholder="E-mail"></p>
 						<p><input type="password" required class="myInput" id="primeiraSenha" placeholder="Senha"></p>
 						<p><input type="password" required class="myInput" placeholder="Confirme sua senha" oninput="validarSenha(this)"></p>

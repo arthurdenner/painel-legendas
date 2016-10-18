@@ -15,15 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-		System.out.println("Iniciando...");
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher rs = request.getRequestDispatcher("/Pages/main.jsp");
-        rs.forward(request, response);
+		
+		 response.setContentType("text/html;charset=UTF-8");
+		 PrintWriter out = response.getWriter();
+		 
+		 String nickname = request.getParameter("nickname");
+		 String password = request.getParameter("password");
+	        
+        /*RequestDispatcher rs = request.getRequestDispatcher("/Pages/main.jsp");
+        rs.forward(request, response);*/
 	}
 }
