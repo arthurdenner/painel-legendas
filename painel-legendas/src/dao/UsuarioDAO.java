@@ -1,11 +1,14 @@
 package dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 import model.Usuario;
 
@@ -13,18 +16,35 @@ public class UsuarioDAO {
 	 ConexaoMySQL conexao = new ConexaoMySQL();
 	    
 	 	public int insert(Usuario usuario) throws SQLException {
-	        Statement stmt;
+	        Connection con;
 	        try {
-	            stmt = conexao.conexaoMySQL().createStatement();
-	            String exe = "INSERT INTO usuario(nick, email, senha, foto, id_permissao) VALUES (" 
-	                    + "'" + usuario.getNick()+ "', " + "'" + usuario.getEmail() + "'," + "'" + usuario.getSenha() + "'," 
-	                    + " ')";
-	            stmt.executeUpdate(exe);
-	            return 1;
+	            con = conexao.conexaoMySQL();
+	            PreparedStatement exe = con.prepareStatement
+	            		("INSERT INTO usuario(nick, email, senha) VALUES ('" + usuario.getNick()+ "', '" + usuario.getEmail() + "', '" + usuario.getSenha() + "')");
+	            int deuCerto = exe.executeUpdate();
+	            return deuCerto; 
 	        } catch (SQLException e) {
 	            throw new SQLException("Erro: " + e.getMessage());
 	        }
 	    }       
+	 	
+	 	public void logar(String nick, String senha, HttpSession session) throws SQLException {
+	        Connection con;
+	        try {
+	            con = conexao.conexaoMySQL();
+	            PreparedStatement exe = con.prepareStatement
+	            		("SELECT * FROM usuario WHERE nick = '" + nick + "' AND senha = '" + senha + "'");
+	            System.out.println(exe);
+	            ResultSet rs = exe.executeQuery();
+	            System.out.println(rs.next());
+	            
+	            if(rs.first()) {
+	            	session.setAttribute("nick", nick);
+	            }
+	        } catch (SQLException e) {
+	            throw new SQLException("Erro: " + e.getMessage());
+	        }
+	    }
 	    
 	    public int updateEmail(Usuario usuario) throws SQLException {
 	        Statement stmt;

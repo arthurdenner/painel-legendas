@@ -28,6 +28,7 @@ public class Registro extends HttpServlet {
 		 String password = request.getParameter("password");
 		 
 		 UsuarioDAO dao = new UsuarioDAO();
+		 
 		 try {
 			 if(!dao.isExistePesquisa("nick", nick)) {
 				 Usuario novoUsuario = new Usuario();
