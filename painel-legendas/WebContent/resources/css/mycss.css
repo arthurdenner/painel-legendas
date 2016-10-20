@@ -27,7 +27,6 @@ body {
 
 .modal-content {
 	font-family: 'Open Sans', sans-serif;
-	min-width: 300px;
 }
 
 .myInput {
@@ -82,5 +81,3 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
-
-

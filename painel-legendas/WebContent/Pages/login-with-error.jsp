@@ -22,7 +22,7 @@
 <body class="home" id="container">
 
 	<!-- Modal to login -->
-	<!-- <div class="modal fade" id="loginModal" role="dialog" tabindex="-1">
+	<div class="modal fade" id="loginModal" role="dialog" tabindex="-1">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -30,7 +30,7 @@
 					<h4 class="modal-title">Login</h4>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="login">
+					<form method="POST" action="../login">
 						<p><input type="text" name="nick" required class="myInput" placeholder="Nome de usuário"></p>
 						<p><input type="password" name="password" required class="myInput" placeholder="Senha"></p>
 						<br />
@@ -39,32 +39,9 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- /Modal to login -->
 	
-	<!-- Modal to register -->
-	<!-- <div class="modal fade" id="registerModal" role="dialog" tabindex="-1">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Criar conta</h4>
-				</div>
-				<div class="modal-body">
-					<form method="POST" action="register">
-						<p><input type="text" name="nick" required class="myInput" placeholder="Nome de usuário"></p>
-						<p><input type="email" name="email" required class="myInput" placeholder="E-mail"></p>
-						<p><input type="password" required class="myInput" id="primeiraSenha" placeholder="Senha"></p>
-						<p><input type="password" name="password" required class="myInput" placeholder="Confirme sua senha" oninput="validarSenha(this)"></p>
-						<br />
-						<p><input type="submit" class="btn btn-success" id="submitButton" value="Cadastrar-se"></p>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- /Modal to register -->
-
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top" >
 		<div class="container">
@@ -78,7 +55,7 @@
 					<li class="active"><a href="#">Página inicial</a></li>
 					<li><a href="about.html">Equipes cadastradas</a></li>
 					<li><a href="contact.html">Sobre o site</a></li>
-					<li><a href="Pages/login.jsp" class="btn">ENTRAR</a></li>
+					<li><a href="login.jsp" class="btn" >ENTRAR</a></li>
 					<!-- <li><a class="btn" data-toggle="modal" data-target="#loginModal">ENTRAR</a></li> -->
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -89,15 +66,19 @@
 	<!-- Header -->
 	<header id="head">
 		<div class="container">
-			<div class="row">
-				<h1 class="lead">SIMPLES, PRÁTICO E CONFIÁVEL</h1>
-				<p class="tagline">Cadastre-se e tenha acesso às maiores equipes de tradução do país. <br />
-				Junte-se a elas e venha aprender inglês, português e vários outros idiomas, além de fazer novas amizades e, claro, ajudar as pessoas.</p>
-				<p>
-					<a class="btn btn-action btn-lg" href="Pages/login.jsp">ENTRAR</a>
-					&nbsp;&nbsp;&nbsp;
-					<a class="btn btn-action btn-lg" href="Pages/register.jsp">CRIAR CONTA</a>
-				</p>
+			<div class="modal-content">
+				<div class="modal-header">
+					<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+					<h4 class="modal-title">Login</h4>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="../login">
+						<p><input type="text" name="nick" required class="myInput" placeholder="Nome de usuário"></p>
+						<p><input type="password" name="password" required class="myInput" placeholder="Senha"></p>
+						<br />
+						<p><input type="submit" class="btn btn-success" value="Entrar"></p>
+					</form>
+				</div>
 			</div>
 		</div>
 	</header>

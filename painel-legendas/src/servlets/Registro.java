@@ -41,7 +41,7 @@ public class Registro extends HttpServlet {
 				 RequestDispatcher rs = request.getRequestDispatcher("/Pages/main.jsp");
 				 rs.forward(request, response);
 			 } else {
-				 RequestDispatcher rs = request.getRequestDispatcher("/Pages/error.jsp");
+				 RequestDispatcher rs = request.getRequestDispatcher("/Pages/login-with-error.jsp");
 				 rs.forward(request, response);
 			 }
 		 } catch (Exception e) {}
